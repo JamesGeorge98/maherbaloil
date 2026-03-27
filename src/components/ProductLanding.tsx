@@ -1,31 +1,94 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const ingredients = [
-  "Hibiscus Flower", "Henna", "Rose Flowers", "Curry Leaves", "Neem",
-  "Amla", "Ashwagandha Root", "Kalmegh", "Bhringraj", "Tulsi",
-  "Fenugreek", "Black Cumin", "Cherry Flower", "Vetiver",
-  "White Turmeric", "Ajwain", "Sandal", "Guava Leaves", "Aloe Vera",
+  "Hibiscus Flower",
+  "Henna",
+  "Rose Flowers",
+  "Curry Leaves",
+  "Neem",
+  "Amla",
+  "Ashwagandha Root",
+  "Kalmegh",
+  "Bhringraj",
+  "Tulsi",
+  "Fenugreek",
+  "Black Cumin",
+  "Cherry Flower",
+  "Vetiver",
+  "White Turmeric",
+  "Ajwain",
+  "Sandal",
+  "Guava Leaves",
+  "Aloe Vera",
   "+ 15 More Herbs"
 ];
 
 const benefits = [
-  { icon: "🌿", title: "Restricts Hair Fall", desc: "Deep root nourishment locks hair firmly and dramatically cuts breakage and shedding." },
-  { icon: "🌱", title: "Enhances Hair Growth", desc: "36+ actives stimulate dormant follicles, accelerating visible new growth." },
-  { icon: "⚫", title: "Prevents Premature Greying", desc: "Melanin-supporting botanicals preserve your hair's natural colour longer." },
-  { icon: "💧", title: "Thickness & Volume", desc: "Each strand is fortified from within for a visibly fuller, denser mane." },
-  { icon: "🛡️", title: "Scalp Protection", desc: "Neem, Tulsi and Sandal create an antimicrobial shield for a healthy scalp." },
-  { icon: "✨", title: "Lustrous Shine", desc: "Amla and Rose restore natural gloss and silkiness with every application." },
+  {
+    icon: "🌿",
+    title: "Restricts Hair Fall",
+    desc: "Deep root nourishment locks hair firmly and dramatically cuts breakage and shedding."
+  },
+  {
+    icon: "🌱",
+    title: "Enhances Hair Growth",
+    desc: "36+ actives stimulate dormant follicles, accelerating visible new growth."
+  },
+  {
+    icon: "⚫",
+    title: "Prevents Premature Greying",
+    desc: "Melanin-supporting botanicals preserve your hair's natural colour longer."
+  },
+  {
+    icon: "💧",
+    title: "Thickness & Volume",
+    desc: "Each strand is fortified from within for a visibly fuller, denser mane."
+  },
+  {
+    icon: "🛡️",
+    title: "Scalp Protection",
+    desc: "Neem, Tulsi and Sandal create an antimicrobial shield for a healthy scalp."
+  },
+  {
+    icon: "✨",
+    title: "Lustrous Shine",
+    desc: "Amla and Rose restore natural gloss and silkiness with every application."
+  }
 ];
 
 const testimonials = [
-  { name: "Priya R.", city: "Mumbai", rating: 5, text: "After just 3 weeks my hair fall reduced so much. Friends keep asking what I changed!" },
-  { name: "Kavitha M.", city: "Chennai", rating: 5, text: "The herbal scent is so soothing and my grey hairs are definitely slowing down." },
-  { name: "Anita S.", city: "Pune", rating: 5, text: "My hair is visibly thicker. Best oil I've tried and completely natural." },
+  {
+    name: "Priya R.",
+    city: "Mumbai",
+    rating: 5,
+    text: "After just 3 weeks my hair fall reduced so much. Friends keep asking what I changed!"
+  },
+  {
+    name: "Kavitha M.",
+    city: "Chennai",
+    rating: 5,
+    text: "The herbal scent is so soothing and my grey hairs are definitely slowing down."
+  },
+  {
+    name: "Anita S.",
+    city: "Pune",
+    rating: 5,
+    text: "My hair is visibly thicker. Best oil I've tried and completely natural."
+  }
 ];
 
 const Stars = ({ count }: { count: number }) => (
-  <span style={{ color: "#D4A017", fontSize: "1.1rem", letterSpacing: "2px", display: "block", marginBottom: "14px" }}>
-    {"★".repeat(count)}{"☆".repeat(5 - count)}
+  <span
+    style={{
+      color: "#D4A017",
+      fontSize: "1.1rem",
+      letterSpacing: "2px",
+      display: "block",
+      marginBottom: "14px"
+    }}
+  >
+    {"★".repeat(count)}
+    {"☆".repeat(5 - count)}
   </span>
 );
 
@@ -35,7 +98,10 @@ export default function ProductLanding() {
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
     const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      (entries) =>
+        entries.forEach(
+          (e) => e.isIntersecting && e.target.classList.add("visible")
+        ),
       { threshold: 0.15 }
     );
     els.forEach((el) => obs.observe(el));
@@ -280,8 +346,15 @@ export default function ProductLanding() {
 
       {/* NAV */}
       <nav>
-        <span className="nav-logo">MA <span>Hair Oil</span></span>
-        <button className="nav-cta" onClick={() => window.open('https://www.meesho.com', '_blank')}>Buy Now ₹399</button>
+        <span className="nav-logo">
+          MA <span>Hair Oil</span>
+        </span>
+        <button
+          className="nav-cta"
+          onClick={() => window.open("https://www.meesho.com", "_blank")}
+        >
+          Buy Now ₹399
+        </button>
       </nav>
 
       {/* HERO */}
@@ -289,10 +362,15 @@ export default function ProductLanding() {
         <div className="hero-text">
           <div className="reveal hero-badge">🌿 100% Herbal Formula</div>
           <h1 className="reveal delay-1">
-            Grow <em>Thicker,</em><br />Stronger Hair<br />Naturally
+            Grow <em>Thicker,</em>
+            <br />
+            Stronger Hair
+            <br />
+            Naturally
           </h1>
           <p className="hero-sub reveal delay-2">
-            MA Hair Growth Herbal Oil — crafted from 36+ time-tested botanicals for dramatic results.
+            MA Hair Growth Herbal Oil — crafted from 36+ time-tested botanicals
+            for dramatic results.
           </p>
           <ul className="hero-checks reveal delay-3">
             <li>Restricts Hair Fall</li>
@@ -300,36 +378,69 @@ export default function ProductLanding() {
             <li>Prevents Premature Greying</li>
           </ul>
           <div className="hero-actions reveal delay-4">
-            <button className="btn-primary" onClick={() => window.open('https://www.meesho.com', '_blank')}>
+            <button
+              className="btn-primary"
+              onClick={() => window.open("https://www.meesho.com", "_blank")}
+            >
               Shop on Meesho
             </button>
-            <button className="btn-outline" onClick={() => document.getElementById('details')?.scrollIntoView({ behavior: 'smooth' })}>
+            <button
+              className="btn-outline"
+              onClick={() =>
+                document
+                  .getElementById("details")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               Learn More
             </button>
           </div>
-          <p className="hero-price-tag reveal delay-4">MRP <strong>₹399</strong> / 200 ml · All taxes inclusive</p>
+          <p className="hero-price-tag reveal delay-4">
+            MRP <strong>₹399</strong> / 200 ml · All taxes inclusive
+          </p>
         </div>
         <div className="hero-image-wrap">
-          <img src="/frontimagema.png" alt="MA Hair Growth Herbal Oil" />
+          <img src={`${import.meta.env.BASE_URL}frontimagema.png`} alt="MA Hair Growth Herbal Oil" />
           <div className="hero-glow" />
         </div>
       </section>
 
       {/* TRUST BAR */}
       <div className="trust-bar">
-        {[["🌿","36+ Herbal Ingredients"],["✅","FSSAI Certified"],["💯","All Hair Types"],["📦","200ml Bottle"],["⭐","Trusted by Customers"]].map(([icon, label]) => (
-          <div className="trust-item" key={label}><span>{icon}</span><span>{label}</span></div>
+        {[
+          ["🌿", "36+ Herbal Ingredients"],
+          ["✅", "FSSAI Certified"],
+          ["💯", "All Hair Types"],
+          ["📦", "200ml Bottle"],
+          ["⭐", "Trusted by Customers"]
+        ].map(([icon, label]) => (
+          <div className="trust-item" key={label}>
+            <span>{icon}</span>
+            <span>{label}</span>
+          </div>
         ))}
       </div>
 
       {/* BENEFITS */}
       <section className="section">
-        <div className="reveal"><span className="section-label">Why MA Hair Oil</span></div>
-        <h2 className="section-title reveal delay-1">Your Hair Deserves<br />the Best of Nature</h2>
-        <p className="section-sub reveal delay-2">Every drop is packed with traditional herbal wisdom — no harmful chemicals, only pure botanical power.</p>
+        <div className="reveal">
+          <span className="section-label">Why MA Hair Oil</span>
+        </div>
+        <h2 className="section-title reveal delay-1">
+          Your Hair Deserves
+          <br />
+          the Best of Nature
+        </h2>
+        <p className="section-sub reveal delay-2">
+          Every drop is packed with traditional herbal wisdom — no harmful
+          chemicals, only pure botanical power.
+        </p>
         <div className="benefits-grid">
           {benefits.map((b, i) => (
-            <div className={`benefit-card reveal delay-${(i % 4) + 1}`} key={b.title}>
+            <div
+              className={`benefit-card reveal delay-${(i % 4) + 1}`}
+              key={b.title}
+            >
               <div className="benefit-icon">{b.icon}</div>
               <h3>{b.title}</h3>
               <p>{b.desc}</p>
@@ -340,12 +451,26 @@ export default function ProductLanding() {
 
       {/* INGREDIENTS */}
       <section className="ingredients-section">
-        <div className="reveal"><span className="section-label">Pure & Powerful</span></div>
-        <h2 className="section-title reveal delay-1">36+ Handpicked<br />Herbal Ingredients</h2>
-        <p className="section-sub reveal delay-2">Each ingredient is selected for its centuries-old role in Ayurvedic hair care.</p>
+        <div className="reveal">
+          <span className="section-label">Pure & Powerful</span>
+        </div>
+        <h2 className="section-title reveal delay-1">
+          36+ Handpicked
+          <br />
+          Herbal Ingredients
+        </h2>
+        <p className="section-sub reveal delay-2">
+          Each ingredient is selected for its centuries-old role in Ayurvedic
+          hair care.
+        </p>
         <div className="ingredient-cloud">
           {ingredients.map((ing, i) => (
-            <span className={`ingredient-pill reveal delay-${(i % 4) + 1}`} key={ing}>{ing}</span>
+            <span
+              className={`ingredient-pill reveal delay-${(i % 4) + 1}`}
+              key={ing}
+            >
+              {ing}
+            </span>
           ))}
         </div>
       </section>
@@ -354,17 +479,38 @@ export default function ProductLanding() {
       <section className="section" id="details">
         <div className="product-detail">
           <div className="reveal">
-            <img src="/backma.png" alt="MA Hair Oil Ingredients Label" />
+            <img src={`${import.meta.env.BASE_URL}backma.png`} alt="MA Hair Oil Ingredients Label" />
           </div>
           <div>
-            <div className="reveal"><span className="section-label">Product Details</span></div>
-            <h2 className="section-title reveal delay-1">Everything You<br />Need to Know</h2>
+            <div className="reveal">
+              <span className="section-label">Product Details</span>
+            </div>
+            <h2 className="section-title reveal delay-1">
+              Everything You
+              <br />
+              Need to Know
+            </h2>
             <ul className="detail-list reveal delay-2">
-              <li><span>📦</span><span>200 ml bottle — rich, deep-coloured herbal oil</span></li>
-              <li><span>✅</span><span>FSSAI Certified · No. 21525003001135</span></li>
-              <li><span>🌿</span><span>36+ premium herbal ingredients, no harsh chemicals</span></li>
-              <li><span>💆</span><span>Suitable for all hair types — dry, oily, normal</span></li>
-              <li><span>🏭</span><span>Made in Kanyakumari · Marketed from Mumbai</span></li>
+              <li>
+                <span>📦</span>
+                <span>200 ml bottle — rich, deep-coloured herbal oil</span>
+              </li>
+              <li>
+                <span>✅</span>
+                <span>FSSAI Certified · No. 21525003001135</span>
+              </li>
+              <li>
+                <span>🌿</span>
+                <span>36+ premium herbal ingredients, no harsh chemicals</span>
+              </li>
+              <li>
+                <span>💆</span>
+                <span>Suitable for all hair types — dry, oily, normal</span>
+              </li>
+              <li>
+                <span>🏭</span>
+                <span>Made in Kanyakumari · Marketed from Mumbai</span>
+              </li>
             </ul>
             <div className="price-badge reveal delay-3">
               <span className="label">MRP</span>
@@ -372,8 +518,22 @@ export default function ProductLanding() {
               <span className="label">· Inclusive of all taxes</span>
             </div>
             <div className="shop-buttons reveal delay-4">
-              <a className="shop-btn shop-btn-meesho" href="https://www.meesho.com" target="_blank" rel="noreferrer">🛍 Buy on Meesho</a>
-              <a className="shop-btn shop-btn-amazon" href="https://www.amazon.in" target="_blank" rel="noreferrer">📦 Coming on Amazon</a>
+              <a
+                className="shop-btn shop-btn-meesho"
+                href="https://www.meesho.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                🛍 Buy on Meesho
+              </a>
+              <a
+                className="shop-btn shop-btn-amazon"
+                href="https://www.amazon.in"
+                target="_blank"
+                rel="noreferrer"
+              >
+                📦 Coming on Amazon
+              </a>
             </div>
           </div>
         </div>
@@ -382,15 +542,33 @@ export default function ProductLanding() {
       {/* HOW TO USE */}
       <section className="section how-section">
         <div style={{ textAlign: "center" }}>
-          <div className="reveal"><span className="section-label">How to Use</span></div>
+          <div className="reveal">
+            <span className="section-label">How to Use</span>
+          </div>
           <h2 className="section-title reveal delay-1">Simple 4-Step Ritual</h2>
         </div>
         <div className="steps">
           {[
-            ["1","Warm the Oil","Gently warm a small amount between your palms for better absorption."],
-            ["2","Apply to Scalp","Massage into the scalp using circular fingertip motions."],
-            ["3","Coat the Strands","Work the oil from roots to tips for full coverage."],
-            ["4","Leave & Rinse","Leave for 1–2 hours (or overnight) then wash with mild shampoo."],
+            [
+              "1",
+              "Warm the Oil",
+              "Gently warm a small amount between your palms for better absorption."
+            ],
+            [
+              "2",
+              "Apply to Scalp",
+              "Massage into the scalp using circular fingertip motions."
+            ],
+            [
+              "3",
+              "Coat the Strands",
+              "Work the oil from roots to tips for full coverage."
+            ],
+            [
+              "4",
+              "Leave & Rinse",
+              "Leave for 1–2 hours (or overnight) then wash with mild shampoo."
+            ]
           ].map(([num, title, desc], i) => (
             <div className={`step reveal delay-${i + 1}`} key={num}>
               <div className="step-num">{num}</div>
@@ -403,14 +581,22 @@ export default function ProductLanding() {
 
       {/* TESTIMONIALS */}
       <section className="section" style={{ background: "var(--cream)" }}>
-        <div className="reveal"><span className="section-label">Customer Love</span></div>
-        <h2 className="section-title reveal delay-1">Real Results,<br />Real People</h2>
+        <div className="reveal">
+          <span className="section-label">Customer Love</span>
+        </div>
+        <h2 className="section-title reveal delay-1">
+          Real Results,
+          <br />
+          Real People
+        </h2>
         <div className="testi-grid">
           {testimonials.map((t, i) => (
             <div className={`testi-card reveal delay-${i + 1}`} key={t.name}>
               <Stars count={t.rating} />
               <p className="testi-text">"{t.text}"</p>
-              <p className="testi-author">{t.name} <span>· {t.city}</span></p>
+              <p className="testi-author">
+                {t.name} <span>· {t.city}</span>
+              </p>
             </div>
           ))}
         </div>
@@ -418,11 +604,31 @@ export default function ProductLanding() {
 
       {/* CTA */}
       <section className="cta-banner">
-        <h2 className="reveal">Start Your Hair Growth<br />Journey Today</h2>
-        <p className="reveal delay-1">Join thousands who trust MA Hair Oil for thicker, healthier hair.</p>
+        <h2 className="reveal">
+          Start Your Hair Growth
+          <br />
+          Journey Today
+        </h2>
+        <p className="reveal delay-1">
+          Join thousands who trust MA Hair Oil for thicker, healthier hair.
+        </p>
         <div className="shop-buttons reveal delay-2">
-          <a className="shop-btn shop-btn-meesho" href="https://www.meesho.com" target="_blank" rel="noreferrer">🛍 Buy on Meesho — ₹399</a>
-          <a className="shop-btn shop-btn-amazon" href="https://www.amazon.in" target="_blank" rel="noreferrer">📦 Coming Soon on Amazon</a>
+          <a
+            className="shop-btn shop-btn-meesho"
+            href="https://www.meesho.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            🛍 Buy on Meesho — ₹399
+          </a>
+          <a
+            className="shop-btn shop-btn-amazon"
+            href="https://www.amazon.in"
+            target="_blank"
+            rel="noreferrer"
+          >
+            📦 Coming Soon on Amazon
+          </a>
         </div>
       </section>
 
@@ -434,7 +640,10 @@ export default function ProductLanding() {
           <a href="mailto:jaya.kala1998@gmail.com">jaya.kala1998@gmail.com</a>
           <a href="tel:9831129915">+91 98311 29915</a>
         </div>
-        <p>© 2026 <strong>MA Herbal Hair Oil</strong>. Marketed by MA Hair Oil, Mulund (West), Mumbai – 400080. All rights reserved.</p>
+        <p>
+          © 2026 <strong>MA Herbal Hair Oil</strong>. Marketed by MA Hair Oil,
+          Mulund (West), Mumbai – 400080. All rights reserved.
+        </p>
       </footer>
     </>
   );
